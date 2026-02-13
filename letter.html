@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine's Vintage Letter</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff5e6;
+    font-family: 'Parisienne', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .letter-container {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    padding: 50px;
+    border: 8px solid #8B0000;
+    border-radius: 15px;
+    background: #fff8f5;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color: #8B0000;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+  }
+
+  .letter-header {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: #B22222;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px #f8d6dc;
+    position: relative;
+    z-index: 1;
+  }
+
+  .letter-body {
+    font-size: 24px;   /* Thoda bada font */
+    font-weight: 600;  /* Medium-bold */
+    line-height: 1.9;  /* Thodi extra spacing for readability */
+}
+
+
+  .letter-body span {
+    color: #B22222;
+    font-family: 'Great Vibes', cursive;
+  }
+
+  .letter-footer {
+    margin-top: 40px;
+    text-align: right;
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    color: #B22222;
+    position: relative;
+    z-index: 1;
+  }
+
+  .nav-button {
+    display: block;
+    margin: 30px auto 0;
+    padding: 10px 25px;
+    background: #B22222;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Parisienne', cursive;
+    transition: 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .nav-button:hover {
+    background: #8B0000;
+  }
+
+  .page {
+    display: none;
+  }
+
+  .page.active {
+    display: block;
+  }
+
+  /* floating hearts */
+  .heart {
+    position: absolute;
+    font-size: 24px;
+    color: #B22222;
+    animation: float 4s infinite ease-in-out;
+    z-index: 1;
+  }
+
+  .heart:nth-child(1) { top: 10px; left: 20px; animation-delay: 0s; }
+  .heart:nth-child(2) { top: 50px; right: 40px; animation-delay: 1s; }
+  .heart:nth-child(3) { bottom: 20px; left: 60px; animation-delay: 2s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-20px); opacity: 0.7; }
+  }
+
+  .cover-text {
+    font-size: 36px;
+    text-align: center;
+    color: #B22222;
+    font-family: 'Great Vibes', cursive;
+    margin-top: 20px;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="letter-container">
+
+  <div class="heart">❤️</div>
+  <div class="heart">💖</div>
+  <div class="heart">💕</div>
+
+  <!-- Page 0: Cover -->
+  <div class="page active" id="page0">
+    <div class="letter-header">Happy Valentine’s Day 💖</div>
+    <div class="cover-text">Mr. Muzammil💖</div>
+    <div class="cover-text">This letter is for you💌</div>
+    <button class="nav-button" onclick="nextPage()">Open Letter ➡️</button>
+  </div>
+
+  <!-- Page 1: Combined Paragraphs -->
+  <div class="page" id="page1">
+  <div class="letter-header">The Day We Meet💕</div>
+    <div class="letter-body">Ya Amar❤️</div>
+    <div class="letter-body">
+      I still remember the first time I noticed you, at my cousin’s wedding 🥰. You were talking to my mother, and I didn’t even know who you were… yet something about you caught my attention 💋.  
+
+      On the third day, I stood beside you, staring at you seriously, hiding my emotions 😘. But my heart already knew something it could not explain ❤️💖.
+
+      <br><br>
+
+      On the fifth day, I realized… I liked you 😍. That day, you winked at me while I stood on the stage 😘. And the strangest thing happened — the moment my eyes moved away, you seemed to vanish 💌.  
+
+      Yet my eyes kept searching for you, as if something precious had disappeared 🥺❤️. It felt like my world was incomplete until I found you again 💞.
+    </div>
+    <button class="nav-button" onclick="prevPage()">⬅️ Previous Page</button>
+    <button class="nav-button" onclick="nextPage()">Next Page ➡️</button>
+  </div>
+
+  <!-- Page 2: Final Page -->
+  <div class="page" id="page2">
+    <div class="letter-header">The Day That Changed Everything 💖</div>
+    <div class="letter-body">
+      On the last day of the wedding, I wore a saree and you wore shalwar kameez 👗💖. By chance, my scarf matched your outfit 😍. I sat beside you, longing for our eyes to meet, but it was fleeting 🥰.  
+
+      Walking beside you, however, my world felt complete 💕. That moment, our silent connection, remains my most treasured memory 💋💞.  
+
+      My love, I don’t need grand gestures 😘. I see your heart, I feel your love, and I choose you ❤️💋. I promise to be yours in trust, in patience, and in all the little ways that matter 💕💖. You are my happiness, my home, and my everything 🥰💞. I love you soo much💕😚
+   </div>
+    <button class="nav-button" onclick="prevPage()">⬅️ Previous Page</button>
+    <button class="nav-button" onclick="nextPage()">Next Page ➡️</button>
+
+  </div>
+<!-- Page 3: New Page -->
+<div class="page" id="page3">
+  <div class="letter-header">A Little More For You 💕</div>
+
+  <div class="letter-body">
+   Mere paas woh alfaaz hi nahi jo tumhari ahmiyat bata sakein, Kaise samjhaun duniya ko tum mere liye kya ho...💖 <br>Tum sirf ek naam nahi, ek ehsaas ho, jo har dhadkan ke saath chalta hai💗
+
+<br>Main shayad keh na paun sab kuch, par itna zaroor hai-tum woh shakhs ho jisse mujhe be-panah mohabbat hai🥹
+ </div>
+    <div class="letter-footer">
+      Your Habibti💗,<br>
+      <span>Mahnoor Muzammil💋</span>
+    </div>
+  <button class="nav-button" onclick="prevPage()">⬅️ Previous Page</button>
+</div>
+
+</div>
+
+<script>
+  let currentPage = 0;
+  const totalPages = 3; // Page indices: 0,1,2,3
+
+  function nextPage() {
+    if (currentPage < totalPages) {
+      document.getElementById('page' + currentPage).classList.remove('active');
+      currentPage++;
+      document.getElementById('page' + currentPage).classList.add('active');
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 0) {
+      document.getElementById('page' + currentPage).classList.remove('active');
+      currentPage--;
+      document.getElementById('page' + currentPage).classList.add('active');
+    }
+  }
+</script>
+
+</body>
+</html>
+s
